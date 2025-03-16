@@ -38,7 +38,7 @@ jobs:
           file: ./dockerfile  # Đường dẫn đến Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend_Dashboard:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend_dashboard:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
