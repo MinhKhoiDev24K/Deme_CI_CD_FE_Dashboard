@@ -38,11 +38,10 @@ jobs:
           file: ./dockerfile  # Đường dẫn đến Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/demo-ci-cd-cellphones-client:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend_Dashboard:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
       - name: Verify build digest
         run: |
           echo "FE Dashboard Image Digest: ${{ steps.build_dashboard.outputs.digest }}"
-          
